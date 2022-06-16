@@ -1,4 +1,4 @@
-import home from './home/home.js';
+import {Header} from './layouts/home.js';
 
 const CreateElements = (() => {
     const mainContainer = document.createElement('div');
@@ -24,6 +24,11 @@ const CreateBody = (() => {
     CreateElements.mainContainer.appendChild(CreateElements.footer);
 
     return CreateElements.mainContainer;
-})();   
+})();
+
+function cunstructHome() {
+    CreateElements.header.appendChild(Header);
+}
 
 document.body.appendChild(CreateBody);
+cunstructHome();

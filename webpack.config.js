@@ -8,7 +8,7 @@ module.exports = {
             import: './src/index.js',
         },
         home: {
-            import: './src/home/home.js',
+            import: './src/layouts/home.js',
         },
     },
     devtool: 'inline-source-map',
