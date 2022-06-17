@@ -1,4 +1,3 @@
-//import {Header} from './layouts/home.js';
 import './index.css';
 
 const CreateElements = (() => {
@@ -25,6 +24,7 @@ const CreateElements = (() => {
 })();
 
 const CreateNav = (() => {
+    // creates links for each navigation div automatically instead of hard coding it
     CreateElements.navDivs.forEach((div) => {
         CreateElements.navBar.appendChild(div);
         let currentDivName = div.id;
