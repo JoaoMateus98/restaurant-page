@@ -1,3 +1,11 @@
 #content {
-    color: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#content-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
 }

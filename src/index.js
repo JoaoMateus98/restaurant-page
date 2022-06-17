@@ -49,3 +49,4 @@ const CreateBody = (() => {
 })();
 
 document.body.append(CreateElements.navBar, CreateBody);
+CreateElements.mainContainer.appendChild(Home);
