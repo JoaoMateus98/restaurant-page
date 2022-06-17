@@ -1,4 +1,4 @@
-import './contact.css';
+import './styles/contact.css';
 
 const CreateElements = (() => {
     const contentContainer = document.createElement('div');

@@ -1,4 +1,4 @@
-import './menu.css';
+import './styles/menu.css';
 
 const CreateElements = (() => {
     const contentContainer = document.createElement('div');

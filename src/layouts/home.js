@@ -1,4 +1,4 @@
-import './home.css';
+import './styles/home.css';
 
 const CreateElements = (() => {
     const contentContainer = document.createElement('div');

@@ -1,7 +1,7 @@
-import './index.css';
+import './layouts/styles/index.css';
 import { Home } from './layouts/home.js';
 import { Menu } from './layouts/menu.js';
-import { Contact } from './layouts/contact';
+import { Contact } from './layouts/contact.js';
 
 const CreateElements = (() => {
     //navigation bar
