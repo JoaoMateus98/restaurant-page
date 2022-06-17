@@ -1,4 +1,5 @@
 import './index.css';
+import {Home} from './layouts/home.js';
 
 const CreateElements = (() => {
     //navigation bar
@@ -28,7 +29,7 @@ const CreateNav = (() => {
     CreateElements.navDivs.forEach((div) => {
         CreateElements.navBar.appendChild(div);
         let currentDivName = div.id;
-        div.appendChild(document.createElement('a'));
+        div.appendChild(document.createElement('button'));
         div.children[0].setAttribute('id', `${currentDivName}-link`);
         div.children[0].setAttribute('href', '#');
         div.children[0].textContent = currentDivName;
@@ -36,12 +37,15 @@ const CreateNav = (() => {
 })();
 
 const CreateBody = (() => {
+    const homeButton = CreateElements.navDivs[0].children[0];
+    const menuButton = CreateElements.navDivs[1].children[0];
+    const contactButton = CreateElements.navDivs[2].children[0];
+
+    homeButton.addEventListener('click', function() { // create home on click
+        CreateElements.mainContainer.appendChild(Home);
+    });
 
     return CreateElements.mainContainer;
 })();
-
-// function cunstructHome() {
-//     CreateElements.header.appendChild(Header);
-// }
 
 document.body.append(CreateElements.navBar, CreateBody);
