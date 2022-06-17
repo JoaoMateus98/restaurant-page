@@ -1,34 +1,47 @@
-import {Header} from './layouts/home.js';
+//import {Header} from './layouts/home.js';
+import './index.css';
 
 const CreateElements = (() => {
+    //navigation bar
+    const navBar = document.createElement('nav');
+    navBar.setAttribute('id', 'nav');
+    //navigation Divs
+    const homeDiv = document.createElement('div');
+    homeDiv.setAttribute('id', 'Home');
+    const menuDiv = document.createElement('div');
+    menuDiv.setAttribute('id', 'Menu');
+    const contactDiv = document.createElement('div');
+    contactDiv.setAttribute('id', 'Contact');
+    const navDivs = [homeDiv, menuDiv, contactDiv];
+    //body
     const mainContainer = document.createElement('div');
     mainContainer.setAttribute('id', 'content');
-    const header = document.createElement('div');
-    header.setAttribute('id', 'content-header');
-    const body = document.createElement('div')
-    body.setAttribute('id', 'content-body');
-    const footer = document.createElement('div');
-    footer.setAttribute('id', 'content-footer');
 
     return {
+        navBar,
+        navDivs,
         mainContainer,
-        header,
-        body,
-        footer
     }
 })();
 
+const CreateNav = (() => {
+    CreateElements.navDivs.forEach((div) => {
+        CreateElements.navBar.appendChild(div);
+        let currentDivName = div.id;
+        div.appendChild(document.createElement('a'));
+        div.children[0].setAttribute('id', `${currentDivName}-link`);
+        div.children[0].setAttribute('href', '#');
+        div.children[0].textContent = currentDivName;
+    });
+})();
+
 const CreateBody = (() => {
-    CreateElements.mainContainer.appendChild(CreateElements.header);
-    CreateElements.mainContainer.appendChild(CreateElements.body);
-    CreateElements.mainContainer.appendChild(CreateElements.footer);
 
     return CreateElements.mainContainer;
 })();
 
-function cunstructHome() {
-    CreateElements.header.appendChild(Header);
-}
+// function cunstructHome() {
+//     CreateElements.header.appendChild(Header);
+// }
 
-document.body.appendChild(CreateBody);
-cunstructHome();
+document.body.append(CreateElements.navBar, CreateBody);

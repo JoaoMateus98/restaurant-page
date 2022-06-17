@@ -14,6 +14,9 @@ module.exports = {
     devtool: 'inline-source-map',
     devServer: {
         static: './dist',
+        client: {
+            reconnect: true,
+        },
     },
     plugins: [
         new HtmlWebpackPlugin({
