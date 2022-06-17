@@ -1,10 +1,11 @@
-#content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+:root {
+    --test-border: 2px solid red;
 }
 
-#content-container {
+
+
+#home-content-container {
+    background-color: blue;
     text-align: center;
     display: flex;
     flex-direction: column;

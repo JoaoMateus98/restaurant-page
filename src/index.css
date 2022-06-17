@@ -6,13 +6,13 @@ body, html {
 
 body {
     display: grid;
-    grid-template-rows: 5rem 1fr;
+    grid-template-rows: 5rem 1fr 3rem;
 }
 
 :root {
     --test-border: 2px solid red;
 }
-
+/* nav */
 #nav {
     border: var(--test-border);
     display: flex;
@@ -24,8 +24,25 @@ body {
 #nav > div > button {
     cursor: pointer;
     font-size: 1.2rem;
+    font-weight: 600;
     border: 0;
     height: 4rem;
     background-color: transparent;
 }
 
+/* affects all other css in content */
+#content {
+    border: var(--test-border);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* footer */
+#footer {
+    font-size: 1rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

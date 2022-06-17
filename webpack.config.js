@@ -7,9 +7,6 @@ module.exports = {
         index: {
             import: './src/index.js',
         },
-        home: {
-            import: './src/layouts/home.js',
-        },
     },
     devtool: 'inline-source-map',
     devServer: {
@@ -20,7 +17,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            title: `Joao's Pizzeria`,
+            title: `Carne No Fogo`,
         }),
     ],
     output: {

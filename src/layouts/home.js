@@ -2,7 +2,7 @@ import './home.css';
 
 const CreateElements = (() => {
     const contentContainer = document.createElement('div');
-    contentContainer.setAttribute('id', 'content-container')
+    contentContainer.setAttribute('id', 'home-content-container');
     const welcome = document.createElement('h3');
     welcome.textContent = 'Bem-Vindo';
     const brandName = document.createElement('h1');

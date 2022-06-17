@@ -1,5 +1,7 @@
 import './index.css';
-import {Home} from './layouts/home.js';
+import { Home } from './layouts/home.js';
+import { Menu } from './layouts/menu.js';
+import { Contact } from './layouts/contact';
 
 const CreateElements = (() => {
     //navigation bar
@@ -16,15 +18,19 @@ const CreateElements = (() => {
     //body
     const mainContainer = document.createElement('div');
     mainContainer.setAttribute('id', 'content');
+    //footer
+    const footerContainer = document.createElement('div');
+    footerContainer.setAttribute('id', 'footer');
 
     return {
         navBar,
         navDivs,
         mainContainer,
+        footerContainer
     }
 })();
 
-const CreateNav = (() => {
+(() => { // creates the navigation bar
     // creates links for each navigation div automatically instead of hard coding it
     CreateElements.navDivs.forEach((div) => {
         CreateElements.navBar.appendChild(div);
@@ -41,12 +47,36 @@ const CreateBody = (() => {
     const menuButton = CreateElements.navDivs[1].children[0];
     const contactButton = CreateElements.navDivs[2].children[0];
 
-    homeButton.addEventListener('click', function() { // create home on click
+    // change body to other content
+    homeButton.addEventListener('click', function() {
+        cleanBody();
         CreateElements.mainContainer.appendChild(Home);
     });
+
+    menuButton.addEventListener('click', function() { 
+        cleanBody();
+        CreateElements.mainContainer.appendChild(Menu);
+    });
+
+    contactButton.addEventListener('click', function() { 
+        cleanBody();
+        CreateElements.mainContainer.appendChild(Contact);
+    });
+
+    function cleanBody() {
+        while (CreateElements.mainContainer.hasChildNodes()){
+            CreateElements.mainContainer.children[0].remove();
+        }
+    }
 
     return CreateElements.mainContainer;
 })();
 
-document.body.append(CreateElements.navBar, CreateBody);
-CreateElements.mainContainer.appendChild(Home);
+(() => {
+    const joaoStamp = document.createElement('p');
+    joaoStamp.textContent = `Carne No Fogo \u00A9 2022`;
+    CreateElements.footerContainer.appendChild(joaoStamp);
+})();
+
+document.body.append(CreateElements.navBar, CreateBody, CreateElements.footerContainer);
+CreateElements.mainContainer.appendChild(Home); // initial screen is home
