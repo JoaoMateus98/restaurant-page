@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body, html {
     padding: 0;
     margin: 0;
@@ -39,9 +43,11 @@ body {
 
 /* affects all other css in content */
 #content {
+    background-color: var(--secondary-black);
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 /* footer */
@@ -54,4 +60,9 @@ body {
     border-top: 2px solid var(--main-gold);
     background-color: var(--secondary-black);
     color: var(--main-gold);
+}
+
+#video {
+    width: 100%;
+    filter: blur(3px);
 }

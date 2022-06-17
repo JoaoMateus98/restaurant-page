@@ -1,4 +1,5 @@
 import './layouts/styles/index.css';
+import backgroundVid from './imgs/steak.mp4';
 import { Home } from './layouts/home.js';
 import { Menu } from './layouts/menu.js';
 import { Contact } from './layouts/contact.js';
@@ -18,6 +19,7 @@ const CreateElements = (() => {
     //body
     const mainContainer = document.createElement('div');
     mainContainer.setAttribute('id', 'content');
+    const video = document.createElement('video');
     //footer
     const footerContainer = document.createElement('div');
     footerContainer.setAttribute('id', 'footer');
@@ -26,6 +28,7 @@ const CreateElements = (() => {
         navBar,
         navDivs,
         mainContainer,
+        video,
         footerContainer
     }
 })();
@@ -42,6 +45,18 @@ const CreateElements = (() => {
     });
 })();
 
+(() => {// video controller
+    const video = CreateElements.video;
+    video.setAttribute('id', 'video');
+    video.appendChild(document.createElement('source'));
+    video.children[0].setAttribute('src', backgroundVid); 
+    video.loop = true;
+    video.play();
+    video.addEventListener('pause', () => {
+        video.play();
+    })
+})();
+
 const CreateBody = (() => {
     const homeButton = CreateElements.navDivs[0].children[0];
     const menuButton = CreateElements.navDivs[1].children[0];
@@ -50,17 +65,17 @@ const CreateBody = (() => {
     // change body to other content
     homeButton.addEventListener('click', function() {
         cleanBody();
-        CreateElements.mainContainer.appendChild(Home);
+        CreateElements.mainContainer.append(CreateElements.video, Home);
     });
 
     menuButton.addEventListener('click', function() { 
         cleanBody();
-        CreateElements.mainContainer.appendChild(Menu);
+        CreateElements.mainContainer.append(CreateElements.video, Menu);
     });
 
     contactButton.addEventListener('click', function() { 
         cleanBody();
-        CreateElements.mainContainer.appendChild(Contact);
+        CreateElements.mainContainer.append(CreateElements.video, Contact);
     });
 
     function cleanBody() {
@@ -79,4 +94,4 @@ const CreateBody = (() => {
 })();
 
 document.body.append(CreateElements.navBar, CreateBody, CreateElements.footerContainer);
-CreateElements.mainContainer.appendChild(Home); // initial screen is home
+CreateElements.mainContainer.append(CreateElements.video, Home); // initial screen is home
