@@ -6,18 +6,21 @@ body, html {
 
 body {
     display: grid;
-    grid-template-rows: 5rem 1fr 3rem;
+    grid-template-rows: 3rem 1fr 3rem;
 }
 
 :root {
     --test-border: 2px solid red;
+    --main-gold: rgb(180,163,101);
+    --secondary-black: rgba(0,0,0, .1);
 }
 /* nav */
 #nav {
-    border: var(--test-border);
     display: flex;
     justify-content: center;
     align-items: center;
+    border-bottom: 2px solid var(--main-gold);
+    background-color: var(--secondary-black);
     gap: 2rem;
 }
 
@@ -26,13 +29,16 @@ body {
     font-size: 1.2rem;
     font-weight: 600;
     border: 0;
-    height: 4rem;
+    height: 2.5rem;
     background-color: transparent;
+    color: var(--main-gold);
+}
+#nav > div > button:hover {
+    border-bottom: 2px solid var(--main-gold);
 }
 
 /* affects all other css in content */
 #content {
-    border: var(--test-border);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -45,4 +51,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    border-top: 2px solid var(--main-gold);
+    background-color: var(--secondary-black);
+    color: var(--main-gold);
 }

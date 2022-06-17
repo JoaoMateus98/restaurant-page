@@ -1,11 +1,10 @@
 :root {
     --test-border: 2px solid red;
+    --main-gold: rgb(180,163,101);
+    --secondary-black: black;
 }
 
-
-
 #home-content-container {
-    background-color: blue;
     text-align: center;
     display: flex;
     flex-direction: column;
