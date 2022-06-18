@@ -1,5 +1,5 @@
 :root {
-    --main-gold: #b4a365;
+    --main-gold: rgb(179, 162, 101);
     --svg-to-gold: brightness(0) saturate(100%) invert(65%) sepia(3%) saturate(5645%) hue-rotate(10deg) brightness(109%) contrast(66%);
 }
 
@@ -8,7 +8,7 @@
 }
 
 #contact-content-container > div {
-    border: 0;
+    border: 3px solid rgba(179, 162, 101, .7);
     border-radius: 10px;
     padding: 4rem;
     background-color: rgba(0, 0, 0, 0.7);
