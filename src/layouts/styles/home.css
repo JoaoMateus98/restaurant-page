@@ -2,6 +2,7 @@
     --test-border: 2px solid red;
     --main-gold: rgb(180,163,101);
     --main-gold-darker: rgb(160, 144, 87);
+    --darker-white: rgb(218, 216, 216);
     --secondary-black: black;
 }
 
@@ -48,4 +49,5 @@
 
 #button-wrapper > div > button:active {
     background-color: var(--main-gold-darker);
+    color: var(--darker-white);
 }

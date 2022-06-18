@@ -36,6 +36,9 @@ const ConstructElementBlocks = (() => {
     return CreateElements.contentContainer;
 })();
 
+const viewMenuButton = CreateElements.viewMenu;
+
 export {
-    ConstructElementBlocks as Home
+    ConstructElementBlocks as Home,
+    viewMenuButton
 };

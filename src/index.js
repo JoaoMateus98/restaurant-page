@@ -1,6 +1,6 @@
 import './layouts/styles/index.css';
 import backgroundVid from './imgs/steak.mp4';
-import { Home } from './layouts/home.js';
+import { Home, viewMenuButton } from './layouts/home.js';
 import { Menu } from './layouts/menu.js';
 import { Contact } from './layouts/contact.js';
 
@@ -51,6 +51,7 @@ const CreateElements = (() => {
     video.appendChild(document.createElement('source'));
     video.children[0].setAttribute('src', backgroundVid); 
     video.loop = true;
+    video.muted = true;
     video.play();
     video.addEventListener('pause', () => {
         video.play();
@@ -68,6 +69,11 @@ const CreateBody = (() => {
         CreateElements.mainContainer.append(CreateElements.video, Home);
     });
 
+    viewMenuButton.addEventListener('click', function() {
+        cleanBody();
+        CreateElements.mainContainer.append(CreateElements.video, Menu);
+    });
+
     menuButton.addEventListener('click', function() { 
         cleanBody();
         CreateElements.mainContainer.append(CreateElements.video, Menu);
@@ -81,8 +87,8 @@ const CreateBody = (() => {
     function cleanBody() {
         while (CreateElements.mainContainer.hasChildNodes()){
             CreateElements.mainContainer.children[0].remove();
-        }
-    }
+        };
+    };
 
     return CreateElements.mainContainer;
 })();
