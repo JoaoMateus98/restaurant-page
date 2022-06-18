@@ -38,7 +38,7 @@ const ConstructElementBlocks = (() => {
     const shrimpBlock = foodBlock(shrimp, 'SHRIMP', 'shrimp-img');
     const saladBlock = foodBlock(salad, 'SALAD', 'salad-img');
     const burgerBlock = foodBlock(burger, 'BURGER', 'burger-img');
-    const dessertBlock = foodBlock(dessert, 'DESERT', 'deser-img');
+    const dessertBlock = foodBlock(dessert, 'DESSERT', 'deser-img');
 
     contentContainer.append(steakBlock, chickenBlock, shrimpBlock, saladBlock, burgerBlock, dessertBlock);
 
