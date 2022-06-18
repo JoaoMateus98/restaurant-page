@@ -1,5 +1,9 @@
 #menu-content-container {
     position: absolute;
+    width: 90%;
+    display: grid;
+    gap: 2.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
 }
 
 #menu-content-container > div[id$="img"] {
@@ -36,5 +40,5 @@
 
 #menu-content-container > div[id$="img"] > img {
     filter: blur(1.1px);
-    width: 15rem;
+    width: 100%;
 }

@@ -1,5 +1,10 @@
 import './styles/menu.css';
 import steak from '../imgs/steak.png';
+import burger from '../imgs/burger.jpg';
+import chicken from '../imgs/chicken.jpg';
+import dessert from '../imgs/dessert.jpg';
+import salad from '../imgs/salad.jpg';
+import shrimp from '../imgs/shrimp.jpg';
 
 const CreateElements = (() => {
     const contentContainer = document.createElement('div');
@@ -29,8 +34,13 @@ const foodBlock = (img, description, id) => {
 const ConstructElementBlocks = (() => {
     const contentContainer = CreateElements.contentContainer;
     const steakBlock = foodBlock(steak, 'STEAK', 'steak-img');
+    const chickenBlock = foodBlock(chicken, 'CHIKEN', 'chiken-img');
+    const shrimpBlock = foodBlock(shrimp, 'SHRIMP', 'shrimp-img');
+    const saladBlock = foodBlock(salad, 'SALAD', 'salad-img');
+    const burgerBlock = foodBlock(burger, 'BURGER', 'burger-img');
+    const dessertBlock = foodBlock(dessert, 'DESERT', 'deser-img');
 
-    contentContainer.appendChild(steakBlock);
+    contentContainer.append(steakBlock, chickenBlock, shrimpBlock, saladBlock, burgerBlock, dessertBlock);
 
     return contentContainer;
 })();
