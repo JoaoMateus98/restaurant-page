@@ -1,6 +1,7 @@
 :root {
     --test-border: 2px solid red;
     --main-gold: rgb(180,163,101);
+    --main-gold-darker: rgb(160, 144, 87);
     --secondary-black: black;
 }
 
@@ -20,4 +21,31 @@
 
 #home-content-container > h1 {
     color: white;
+}
+
+#button-wrapper {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#button-wrapper > div{
+    border: 2px solid var(--main-gold);
+    padding: 1px;
+}
+
+#button-wrapper > div > button {
+    cursor: pointer;
+    border: 0;
+    background-color: var(--main-gold);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    height: 3rem;
+    width: 10rem;
+}
+
+#button-wrapper > div > button:active {
+    background-color: var(--main-gold-darker);
 }

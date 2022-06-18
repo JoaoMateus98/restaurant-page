@@ -16,6 +16,7 @@ body {
 :root {
     --test-border: 2px solid red;
     --main-gold: rgb(180,163,101);
+    --main-gold-darker: rgb(160, 144, 87);
     --secondary-black: rgba(0,0,0, .1);
 }
 /* nav */
@@ -41,6 +42,10 @@ body {
     border-bottom: 2px solid var(--main-gold);
 }
 
+#nav > div > button:active {
+    color: var(--main-gold-darker);
+}
+
 /* affects all other css in content */
 #content {
     background-color: var(--secondary-black);
@@ -63,6 +68,6 @@ body {
 }
 
 #video {
-    width: 100%;
+    width: 125%;
     filter: blur(3px);
 }
