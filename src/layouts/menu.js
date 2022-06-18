@@ -2,21 +2,24 @@ import './styles/menu.css';
 
 const CreateElements = (() => {
     const contentContainer = document.createElement('div');
-    contentContainer.setAttribute('id', 'menu-content-container')
-    const welcome = document.createElement('h3');
-    welcome.textContent = 'Menu placeholder';
+    contentContainer.setAttribute('id', 'menu-content-container');
     //header
     return {
         contentContainer,
-        welcome,
     }
 })();
 
 const ConstructElementBlocks = (() => {
-    CreateElements.contentContainer.append(CreateElements.welcome);
-
     return CreateElements.contentContainer;
 })();
+
+const foodBlock = (img, description, id) => {
+    const foodContainer = document.createElement('div');
+    const image = document.createElement('img');
+    const foodName = document.createElement('p');
+
+    image.setAttribute('src', img);
+}
 
 export {
     ConstructElementBlocks as Menu

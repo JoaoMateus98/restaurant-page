@@ -1,5 +1,5 @@
 import './layouts/styles/index.css';
-import backgroundVid from './imgs/steak.mp4';
+import backgroundVid from './imgs/steakVid.mp4';
 import { Home, viewMenuButton } from './layouts/home.js';
 import { Menu } from './layouts/menu.js';
 import { Contact } from './layouts/contact.js';
