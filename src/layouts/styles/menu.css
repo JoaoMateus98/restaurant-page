@@ -1,3 +1,40 @@
 #menu-content-container {
     position: absolute;
 }
+
+#menu-content-container > div[id$="img"] {
+    position: relative;
+}
+
+#menu-content-container > div[id$="img"]:hover {
+    cursor: pointer;
+    transform: scale(1.02);
+}
+
+#menu-content-container > div[id$="img"] > div {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+}
+
+#menu-content-container > div[id$="img"] > div > p {
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2.5rem;
+    width: 100%;
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: white;
+}
+
+#menu-content-container > div[id$="img"] > img {
+    filter: blur(1.1px);
+    width: 15rem;
+}
