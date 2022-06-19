@@ -63,7 +63,7 @@ const CreateBody = (() => {
     const menuButton = CreateElements.navDivs[1].children[0];
     const contactButton = CreateElements.navDivs[2].children[0];
 
-    // change body to other content
+    // change body to other content //
     homeButton.addEventListener('click', function() {
         cleanBody();
         CreateElements.mainContainer.append(CreateElements.video, Home);
